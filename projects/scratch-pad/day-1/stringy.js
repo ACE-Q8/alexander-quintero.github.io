@@ -12,14 +12,11 @@
  * TIP: In JavaScript, how can we decipher the length of a String?
  * work?
  */
+
 function length(string) {
     // YOUR CODE BELOW HERE //
-var stringLength = length(string.length);
+    return string.length;
     
-    // return the length of parameter (string).
-    console.log(stringLength);
-
-
     // YOUR CODE ABOVE HERE //
 }
 
