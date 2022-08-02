@@ -15,6 +15,7 @@
 
 function length(string) {
     // YOUR CODE BELOW HERE //
+    // return the length of the param (string)
     return string.length;
     
     // YOUR CODE ABOVE HERE //
@@ -25,9 +26,9 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-var string = toLowerCase(string.toLowerCase(" ");
+// return string toLowerCase
+return string.toLowerCase();
 
-console.log(string);
     // YOUR CODE ABOVE HERE //
 }
 
@@ -36,7 +37,8 @@ console.log(string);
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
-
+// return string to uppercase value
+return string.toUpperCase();
 
 
     // YOUR CODE ABOVE HERE //
@@ -57,7 +59,9 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
+    // Change string to inculde a hyphen
+    let words = string.split(" ").map(toLowerCase);
+    return words.join("-");
 
 
     // YOUR CODE ABOVE HERE //
