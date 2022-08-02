@@ -88,9 +88,14 @@ E: Return false if not true
 
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-    // create for loop
-    
+    // Enforce lowercase on 0th index of string 
+    var lowerCaseString = string[0].toLowerCase();
+    var lowerCaseChar = char.toLowerCase();
 
+    // Make ternary function that returns true or false on comparison
+    return lowerCaseString[0] === lowerCaseChar 
+    ? true // If
+    : false; // Else
     // YOUR CODE ABOVE HERE //
 } 
 
@@ -119,8 +124,8 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-
+        // Enforce uppercase or lowercase on the 2nd index to 
+    
 
     // YOUR CODE ABOVE HERE //
 }
