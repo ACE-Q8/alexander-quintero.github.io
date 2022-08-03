@@ -3,29 +3,39 @@
 'use strict';
 
 /**
- * 3: range()
+ * 3: i()
  *
  *  a. Create a function called range that takes two integers as 
  *  parameters and returns an Array containing all integers 
  *  between the two parameters, inclusively.  For example:
  *
- *      range(8, 14);  // => [8, 9, 10, 11, 12, 13, 14]
+ *      i(8, 14);  // => [8, 9, 10, 11, 12, 13, 14]
  *
  *  If the first argument is greater than the second, 
  *  return the range in reverse order, ie:
  *
- *      range(14, 8);  // => [14, 13, 12, 11, 10, 9, 8]
+ *      i(14, 8);  // => [14, 13, 12, 11, 10, 9, 8]
  *
  *  TIPS:
  *  a. create something to collect the output you'll return.
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
+
+/*
+I: Fuction takes two integers as parameters.
+O: Array containing all integers between the two parameters
+C: Must inclusively contain all integers between the two parameters
+E: If the first argument is greater than the second return the range in reverse.
+*/
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
+    // Make arr variable to store array
+    var arr = [];
+    // Make for loop to iterate through arr
+    for (var i = start; i < end; i++){
+        
+    }
     
     // YOUR CODE GOES ABOVE HERE //
 }
@@ -38,5 +48,5 @@ function range(start, end) {
 if((typeof process !== 'undefined') &&
    (typeof process.versions.node !== 'undefined')) {
     // here, export any references you need for tests //
-    module.exports.range = range;
+    module.exports.i = i;
 }
