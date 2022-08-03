@@ -124,9 +124,13 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-        // Enforce uppercase or lowercase on the 2nd index to 
-    
-
+        // Enforce uppercase or lowercase on string and char
+    var lostring = string.toLowerCase();
+    var lochar = char.toLowerCase();
+        // ternary fuction to return to true or false
+    return lostring[lostring.length - 1] === lochar // use bracket notation to access the last index
+    ? true
+    : false;
     // YOUR CODE ABOVE HERE //
 }
 
@@ -137,8 +141,8 @@ function endsWith(string, char) {
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+ var stringConcat = stringOne += stringTwo;
+    return stringConcat;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -156,10 +160,17 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+    return args.join('');// use .join to return all of them joined together
 
     // YOUR CODE ABOVE HERE //
 }
+/*
+I: Any number of strings
+O: Strings joined together
+C: Must accept any number of strings
+E:N/A
+*/
+
 
 /**
  * Given two Strings, return the longest of the two.
@@ -170,9 +181,21 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
+
+/*
+I: Input Two Strings
+O: Return the longest of the two
+C: Must return String with the longest index
+E:N/A
+*/
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+        // make if else if conditional chain to determine which string has the longest index(length)
+    if (stringOne.length > stringTwo.length){
+        return stringOne;
+    } else {
+        return stringTwo;
+    }
 
 
     // YOUR CODE ABOVE HERE //
@@ -185,13 +208,29 @@ function longest(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+/*
+I:Input two strings and compare their value in alphabetical order
+O:return 1 if the first is higher, -1 if the second is higher than the first, and 0 if they are equal
+C:N/A
+E:N/A
+*/
+
+
+
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+ if ( stringOne < stringTwo){
+    return 1;
+ } else if (stringOne > stringTwo){
+    return -1;
+ } else {
+    return 0;
+ }
+}
 
 
     // YOUR CODE ABOVE HERE //
-}
+
 
 
 /**
@@ -201,9 +240,23 @@ function sortAscending(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+/*
+I:
+O:
+C:
+E:
+*/
+
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    if (stringOne < stringTwo){
+        return -1;
+      } else if (stringOne > stringTwo){
+        return 1;
+      } else {
+        return 0;
+      }
+    
 
 
 
