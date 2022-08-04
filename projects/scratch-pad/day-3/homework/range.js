@@ -30,19 +30,18 @@ E: If the first argument is greater than the second return the range in reverse.
 */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    // Make arr variable to store array
     var arr = [];
-    // Make for loop to iterate through arr
-    for (var i = start; i < end; i++){
-        
-    }
-    
+    if (start < end){
+        for (var i = start; i <= end; i++){
+            arr.push(i);
+        }
+    } else if (start > end){
+        for (var i = start; i >= end; i--){
+            arr.push(i);
+        }
+    } return arr;
     // YOUR CODE GOES ABOVE HERE //
 }
-
-
-
-
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
