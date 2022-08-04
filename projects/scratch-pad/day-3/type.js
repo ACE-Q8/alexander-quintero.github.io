@@ -14,8 +14,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+    return Array.isArray(value);
     
     
     // YOUR CODE ABOVE HERE //
@@ -37,7 +36,11 @@ E:
 */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
+    if (instanceof value === "object"){
+        return true;
+     } else {
+        return false;
+    }
     
     
     
