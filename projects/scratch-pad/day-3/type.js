@@ -36,9 +36,11 @@ E:
 */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    if (instanceof value === "object"){
+    if (typeof value === 'object' &&
+    !Array.isArray(value) &&
+    value !== null && !(value instanceof Date)){
         return true;
-     } else {
+    } else {
         return false;
     }
     
