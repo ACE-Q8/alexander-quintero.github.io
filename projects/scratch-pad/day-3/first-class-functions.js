@@ -88,10 +88,9 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    return function(str){
-        var collection;
-        for (var i = 0; i = strings.length; i++){
-            collection = modify += strings[i];
+        var collection = [];
+        for (var i = 0; i <= strings.length - 1; i++){
+            collection.push(modify(strings[i]));
         }
         return collection;
     }
@@ -100,7 +99,7 @@ function modifyStrings(strings, modify) {
     
     
     // YOUR CODE ABOVE HERE //
-}
+
 
 /** 
  * Given an Array of Strings and a Function designed to test the String in some 
@@ -113,12 +112,21 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    var count = 0;
+    for (var i = 0; i <= strings.length - 1; i++){
+        if (test(strings[i]) === true){
+            count += 1;
+        } 
+    } if (count === strings.length){
+        return true;
+    } else {
+        return false;
+    }
     
     
-    
-    
+}  
     // YOUR CODE ABOVE HERE //
-}
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
