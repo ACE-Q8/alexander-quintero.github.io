@@ -34,32 +34,42 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
+// var contacts = require('./data/contact.json');
+  
 function makeContact(id, nameFirst, nameLast) {
-    // this.id = id;
-    // this.firstName = nameFirst;
-    // this.lastName = nameLast;
-} 
+ var contacts = [];
+ return { 
+     id: id,
+     nameFirst: nameFirst,
+     nameLast: nameLast, 
 
+ // we implemented the length api for you //
+ length: function() {
 
-function makeContactList(object) {
-    /*
-     * You need something here to hold contacts. See length api for a hint:
-     */
-    var contacts = [];
-    contacts.push()
+     return contacts.length;
 
-    var addContact = function(contact){
-        return contact = makeContact(id, nameFirst, nameLast);
-    }
-    
-    return {
-        // we implemented the length api for you //
-        length: function() {
-            return contacts.length;
+ },
+ 
+ addContact: function(contact){
+
+   return contacts.push(contact);
+ },
+ removeContact: function(contact){
+     for(var i = 0; i < contacts.length; i++){
+        if(contacts[i] === contact) {
+     return contacts.splice(i, 1);
         }
-    }
+     }
+ },
+ printAllContactNames: function(fullName) {
+     for(var i = 0; i < contacts.length; i++) {
+         if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) { 
+         return contacts[i];
+         }
+     }
+ }   
+ };    
 }
-
 
 
 
