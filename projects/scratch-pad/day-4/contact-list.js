@@ -35,16 +35,22 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+    // this.id = id;
+    // this.firstName = nameFirst;
+    // this.lastName = nameLast;
 } 
 
 
-function makeContactList() {
+function makeContactList(object) {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts = {};
+    var contacts = [];
+    contacts.push()
 
+    var addContact = function(contact){
+        return contact = makeContact(id, nameFirst, nameLast);
+    }
     
     return {
         // we implemented the length api for you //

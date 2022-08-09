@@ -67,7 +67,9 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
         return function(str){
-        if (str.length - 1 === endsWith.toLowerCase()){
+            var a = endsWith.toLowerCase();
+            var b = str[str.length - 1].toLowerCase()
+        if (a === b){
             return true;
         } else {
             return false;
@@ -86,7 +88,14 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
+    return function(str){
+        var collection;
+        for (var i = 0; i = strings.length; i++){
+            collection = modify += strings[i];
+        }
+        return collection;
+    }
+
     
     
     
