@@ -37,24 +37,26 @@
 // var contacts = require('./data/contact.json');
   
 function makeContact(id, nameFirst, nameLast) {
- var contacts = [];
- return { 
-     id: id,
-     nameFirst: nameFirst,
-     nameLast: nameLast, 
-
+ var contacts = {};
+     contacts.id = id,
+     contacts.nameFirst = nameFirst,
+     contacts.nameLast = nameLast
+return contacts;
  // we implemented the length api for you //
- length: function() {
+ function makeContactList(){
+ var arr = [];
+ return {
+ 
+    length: function() {
 
      return contacts.length;
 
  },
  
  addContact: function(contact){
-
-   return contacts.push(contact);
+    contacts.push(contact);
  },
- removeContact: function(contact){
+ findContact: function(contact){
      for(var i = 0; i < contacts.length; i++){
         if(contacts[i] === contact) {
      return contacts.splice(i, 1);
@@ -69,8 +71,8 @@ function makeContact(id, nameFirst, nameLast) {
      }
  }   
  };    
-}
 
+}
 
 
 // YOUR CODE GOES ABOVE HERE //

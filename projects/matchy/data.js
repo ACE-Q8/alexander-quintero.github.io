@@ -33,7 +33,9 @@ console.log(noises.length, noises[noises.length - 1], noises);
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+animal['noises'] = noises;
+animal.noises.push('sheesh');
+console.log(animal); 
 
 
 /* *******************************************************************
@@ -58,14 +60,33 @@ console.log(noises.length, noises[noises.length - 1], noises);
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+var animals = [];
+animals.push(animal)
+console.log(animals)
+var duck = {species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh']}
+animals.push(duck)
+console.log(animals)
+var panda = {species: 'bear', name: 'plain_panda', noises: ['much', 'roar']};
+var axelotyl = {species: '?', name: 'qubert', noises: ['squish', 'squash']};
+animals.push(panda, axelotyl)
+console.log(animals, animals.length);
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+var friends = [];
 
+function getRandom(array) {
+var random = Math.floor(Math.random() * animals.length);
+return random;
+};
+
+friends.push(animals[getRandom()].name)
+animals[1]['friends'] = friends;
+
+console.log(friends) 
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
