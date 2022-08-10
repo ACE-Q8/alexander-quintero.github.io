@@ -37,53 +37,72 @@
 // var contacts = require('./data/contact.json');
   
 function makeContact(id, nameFirst, nameLast) {
- var contacts = {};
-     contacts.id = id,
-     contacts.nameFirst = nameFirst,
-     contacts.nameLast = nameLast
-return contacts;
- // we implemented the length api for you //
- function makeContactList(){
- var arr = [];
- return {
- 
-    length: function() {
-
-     return contacts.length;
-
- },
- 
- addContact: function(contact){
-    contacts.push(contact);
- },
- findContact: function(contact){
-     for(var i = 0; i < contacts.length; i++){
-        if(contacts[i] === contact) {
-     return contacts.splice(i, 1);
-        }
-     }
- },
- printAllContactNames: function(fullName) {
-     for(var i = 0; i < contacts.length; i++) {
-         if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) { 
-         return contacts[i];
-         }
-     }
- }   
- };    
-
-}
-
-
-// YOUR CODE GOES ABOVE HERE //
-
-
-
-
-// DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
-if((typeof process !== 'undefined') &&
-(typeof process.versions.node !== 'undefined')) {
-    // here, export any references you need for tests //
-    module.exports.makeContact = makeContact;
-    module.exports.makeContactList = makeContactList;
-}
+    var obj = {};
+    obj.id = id;
+    obj.nameFirst = nameFirst;
+    obj.nameLast = nameLast
+    return obj;
+  } 
+  
+  
+   
+  
+  
+  function makeContactList() {
+      /*
+       * You need something here to hold contacts. See length api for a hint:
+       */
+      var contacts = [];
+      
+      return {
+          // we implemented the length api for you //
+          length: function() {
+              return contacts.length;
+          },
+          addContact: function(contact){
+              contacts.push(contact);
+          },
+          findContact: function(fullName){
+              for (var i = 0; i < contacts.length; i++){
+                  if (contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName){
+                      return contacts[i];
+                  } else {
+                      return undefined;
+                  }
+              }
+          },
+          removeContact: function(contact){
+              for (var i = 0; i < contacts.length; i++){
+                  if (contacts[i].id === contact.id){
+                       contacts.splice(contacts[i], 1);
+                  }
+              }
+  
+          },
+          printAllContactNames: function(){
+           var string = '';
+           var allNames = '';   
+           for (var i = 0; i < contacts.length; i++){
+               string += '.' + contacts[i].nameFirst + ' ' + contacts[i].nameLast;  
+           }              
+           allNames = string.split('.').join('\n');
+             return allNames.slice(1);
+     }    
+  }
+  }
+  
+  
+  
+  
+  // YOUR CODE GOES ABOVE HERE //
+  
+  
+  
+  
+  // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
+  if((typeof process !== 'undefined') &&
+  (typeof process.versions.node !== 'undefined')) {
+      // here, export any references you need for tests //
+      module.exports.makeContact = makeContact;
+      module.exports.makeContactList = makeContactList;
+  }

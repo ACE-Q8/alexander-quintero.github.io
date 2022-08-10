@@ -12,6 +12,7 @@
 7) in terminal, type => npm install -g opspark 
 8) in terminal, type => os install 
 9) select bootcamp session 
-10) select project ## How to run os test/os submit 
+10) select project 
+## How to run os test/os submit 
 
 1) in terminal, type os {action} 2) select bootcamp session 
