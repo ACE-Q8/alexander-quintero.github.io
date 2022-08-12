@@ -1,25 +1,51 @@
 //////////////////////////////////////////////////////////////////////
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
 function objectValues(object) {
-
-} 
+    //Create output array
+    let arrayOutput = [];
+    //Itertate through and push each value to output
+    for (var key in object){
+    arrayOutput.push(object[key])
+    }
+    //return output
+    return arrayOutput
+    };
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function keysToString(object) {
 
-}
+    function keysToString(object) {
+        let outputArray = [];
+        
+        for (var key in object) {
+        outputArray.push(key)
+        }
+        
+        let returnArray = outputArray.join(' ');
+        
+        return returnArray;
+        
+        } 
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+    let outputArray = [];
     
+    for (var key in object){
+        if (typeof object[key] === "string"){
+            outputArray.push(object[key]);
+    }
+
+    }
+    let returnArray = outputArray.join(' ')
+    return returnArray;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +53,13 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
+    if (Array.isArray(collection)){
+        return "array";
+    } else if (typeof collection === 'object' &&
+    collection !== null && !(collection instanceof Date)){
+        return "object";
     
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,15 +67,19 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
-}
-
+    let stringToUpperCase = string.charAt(0).toUpperCase() + string.slice(1);
+   return stringToUpperCase;
+ }
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+   var arr = string.split(" ");
+   for (var i = 0; i < arr.length; i++){
+    arr[i] = capitalizeWord(array[i]);
+   }
+    return arr.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
