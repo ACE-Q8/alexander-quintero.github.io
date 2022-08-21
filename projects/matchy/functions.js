@@ -12,14 +12,13 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function search(animalsArray, animalName) {
-    for (var i = 0; i < animalsArray.length - 1; i++) {
-    if (animalsArray[i] === animalName) {
-    return animalsArray[i]
-    } else {
+function search(animals, name) {
+    for (let i = 0; i < animals.length; i++) {
+    if (animals[i].name === name) {
+    return animals[i];
+    } 
+    }
     return null;
-    }
-    }
     }
 
 
@@ -28,10 +27,8 @@ function search(animalsArray, animalName) {
 //////////////////////////////////////////////////////////////////////
 function replace(animals, name, replacement){
 for (var i = 0; i <= animals.length - 1; i++){
-    if (name = animals[i]){
-        animals.push(replacement);
-    }else {
-        
+    if (animals[i].name === name){
+        return animals.push(replacement);
     }
 }
     
@@ -41,9 +38,11 @@ for (var i = 0; i <= animals.length - 1; i++){
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function remove(animals, name, replacement){
-if (animals[name]){
-    return animals[name] = replacement;
+function remove(animals, name){
+for (let i = 0; i < animals.length; i++){
+    if (animals[i]["name"] === name){
+        animals.splice(i, 1)
+} 
 }
 }
 
@@ -52,6 +51,17 @@ if (animals[name]){
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+function add(animals, animal){
+        for (let i = 0; i < animals.length; i++)
+        for (let k = 0; k < animal.length; k++)
+        if (animal[k].name.length > 0 && animal[k].species.length > 0 && animal[k].name !== animals[i]){
+           return animals.push(animal);
+        // } else if(animal[k].name.length > 0 && animal[k].species.length > 0 && animal[k].name === animals[i]){
+        //     return animals;
+        }
+
+    } 
+    
 
 
 /**
