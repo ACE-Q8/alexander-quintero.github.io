@@ -153,24 +153,43 @@ if(object.friends){
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-    for (let i in object.friends)
-    if (object.friends[i].includes(name)){
+    for (let i in object)
+    if (object.friends.includes(name)){
     return true;
-} else {
-    return false;
+} else if (!object.friends.name){
+    return false;  
 }
+return false;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function nonFriends(name, array) {
-for (let i = 0; i < array.length; i++){
-    if(!array[i].includes(name)){
-        return array[i];
+function nonFriends(name, array){
+    var nameList = [];
+    var result = [];
+    var current = null;
+    for(var i=0; i<array.length; i++){
+        if(name === array[i].name){
+            current = array[i];
+        }else{
+            nameList.push(array[i].name);
+        }
     }
-}
+
+    if(current === null){
+        return nameList;
+    }
+
+    for(var i=0; i<nameList.length; i++){
+        if(current.friends.indexOf(nameList[i]) == -1){
+            result.push(nameList[i]);
+        }
+    }
+
+    return result;
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -180,8 +199,10 @@ for (let i = 0; i < array.length; i++){
 function updateObject(object, key, value) {
 if (!object[key]){
     object[key] = value;
+    return object;
 } else if (object[key]){
     object[key] = value;
+    return object;
 }
 }
 
@@ -190,8 +211,16 @@ if (!object[key]){
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    for (let keys in object){
+        if (object.keys === array){
+            delete object.keys;
+        }
+ }
+ return object;
 }
+
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////

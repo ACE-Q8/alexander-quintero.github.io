@@ -52,14 +52,18 @@ for (let i = 0; i < animals.length; i++){
 //////////////////////////////////////////////////////////////////////
 
 function add(animals, animal){
-        for (let i = 0; i < animals.length; i++)
-        for (let k = 0; k < animal.length; k++)
-        if (animal[k].name.length > 0 && animal[k].species.length > 0 && animal[k].name !== animals[i]){
-           return animals.push(animal);
-        // } else if(animal[k].name.length > 0 && animal[k].species.length > 0 && animal[k].name === animals[i]){
-        //     return animals;
+        var containsAnimal = false;
+        for (var i = 0; i < animals.length;i++) {
+            if (animals[i].name === animal.name) {
+                containsAnimal = true;
+            }
         }
 
+        if (containsAnimal === false) {
+            animals.push(animal);
+        }
+
+        
     } 
     
 
