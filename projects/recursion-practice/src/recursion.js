@@ -92,16 +92,12 @@ var exponent = function(base, exp){
     return base;
   }if (exp === 0){
         return 1;
-  } if (exp<0){
-        base = 1/base;
-        exp = -exp;
-  }if (exp%2===0){
-    num=exponent(base,exp/2);
-     ans=num*num;
-     return ans;
+  } if (exp < 0){
+        return 1 / exponent(base, -exp);
+  }if (exp === 1){
+    return base;
     }  else {
-      num=exponent(base,(exp -1)/2);
-        return base*num*num;
+        return base * exponent(base, exp - 1);
       }
     };
           

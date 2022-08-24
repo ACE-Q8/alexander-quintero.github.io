@@ -211,12 +211,16 @@ if (!object[key]){
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-    for (let i = 0; i < object.length; i++){
-        if (object[i].contains(array)){
-            delete object[i].keys;
-        }  
- }
+    for (let key in object){
+    for (let i = 0; i < array.length; i++){
+        if (key = array[i]){
+            delete object[key];
+        }
+    }
+ } 
+ return object;
 }
+
 
 
 
