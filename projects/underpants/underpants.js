@@ -85,6 +85,18 @@ _.typeOf = function(value) {
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
+_.first = function(array, number){
+    if (!Array.isArray(array)){
+        return [];
+    } else if (typeof(number) !== "number"
+    && number & 2 === 0){
+     return array[0];   
+    }   for (let i = 0; i < number.length; i++){
+            if (number.length > array.length){
+                return number[i];
+            }
+        }
+    }
 
 
 /** _.last
@@ -194,16 +206,16 @@ _.each = function(collection, func){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 _.unique = function(array) {
-    let newArray = [];
-    for (let j = 0; j < array.length; j++){
-    if (_.indexOf(newArray.))
-        newArray.push(this.indexOf(array, array[j]));
-    for (let k = 0; k < newArray.length; k++){
+    // let newArray = [];
+    // for (let j = 0; j < array.length; j++){
+    // if (_.indexOf(newArray.)
+    //     newArray.push(this.indexOf(array, array[j]));
+    // for (let k = 0; k < newArray.length; k++){
         
     
-    }
-    }
-    return newestArray;
+    // }
+    // }
+    // return newestArray;
 }
 
 

@@ -66,16 +66,20 @@ var sumBelow = function(n) {
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
+var range = function(x, y, arr=[]) {
   // BASE
- var arr = [];
+if (Math.abs(x - y) === 1){
+  return arr;
+}
 if (x === y){
-arr.push(x, y);
-return arr;
-} 
-// RECURSION
-return arr.push(x + 1) + range(x + 1);
-  
+  return arr;
+} else if (x > y){
+  arr.push(x - 1);
+  return range(x - 1, y, arr)
+} else if (x < y){
+  arr.push(x + 1)
+  return range(x + 1, y, arr)
+}
 };
 
 // 7. Compute the exponent of a number.
@@ -83,19 +87,56 @@ return arr.push(x + 1) + range(x + 1);
 // 8^2 = 8 x 8 = 64.  Here, 8 is the base and 2 is the exponent.
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
-var exponent = function(base, exp) {
-};
+var exponent = function(base, exp){
+  if (exp === 1){
+    return base;
+  }if (exp === 0){
+        return 1;
+  } if (exp<0){
+        base = 1/base;
+        exp = -exp;
+  }if (exp%2===0){
+    num=exponent(base,exp/2);
+     ans=num*num;
+     return ans;
+    }  else {
+      num=exponent(base,(exp -1)/2);
+        return base*num*num;
+      }
+    };
+          
+//   }  
+//   num = exponent(base, exp/2)
+//   num = num * num;
+//   if (exp%2!==0){
+//     num = num * base;
+//     return num; 
+//   }
+//   return num;
+// };
+
+
 
 // 8. Determine if a number is a power of two.
 // powerOfTwo(1); // true
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+  
 };
 
 // 9. Write a function that accepts a string a reverses it.
-var reverse = function(string) {
-};
+var reverse = function(string, revString="") {
+  //base
+  if (string.length === 0){
+    return revString;
+  }
+  
+  //recursion
+  revString += string[string.length - 1];
+  return reverse(string.substring(0, string.length - 1), revString);
+  };
+
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
